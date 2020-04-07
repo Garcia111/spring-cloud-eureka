@@ -1,0 +1,15 @@
+spring:
+  profiles: peer2
+
+server:
+  port: 8002
+
+
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      #设置与Eureka Server交互的地址，多个地址可用，使用逗号分隔
+      #双节点的注册中心的搭建，将eureka2的serviceUrl指向eureka1
+      defaultZone: http://peer1:8001/eureka/,http://peer2:8002/eureka/
